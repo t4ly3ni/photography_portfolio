@@ -52,6 +52,39 @@ export default function Hero() {
           <motion.h1 style={{ fontSize: '10vw', fontWeight: 900, opacity: overlayOpacity, textTransform: 'uppercase', letterSpacing: '-0.05em', color: 'var(--text-muted)' }}>CAST</motion.h1>
         </motion.div>
 
+        <motion.div
+          style={{
+            opacity: overlayOpacity,
+            position: 'absolute',
+            left: '50%',
+            bottom: '2.2rem',
+            transform: 'translateX(-50%)',
+            width: '28px',
+            height: '46px',
+            borderRadius: '999px',
+            border: '1px solid rgba(255,255,255,0.32)',
+            background: 'rgba(255,255,255,0.03)',
+            backdropFilter: 'blur(8px)',
+            display: 'flex',
+            justifyContent: 'center',
+            paddingTop: '8px',
+            zIndex: 30,
+            pointerEvents: 'none',
+          }}
+        >
+          <motion.span
+            animate={{ y: [0, 13, 0], opacity: [1, 0.35, 1] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+            style={{
+              width: '4px',
+              height: '9px',
+              borderRadius: '999px',
+              backgroundColor: 'var(--accent)',
+              display: 'block',
+            }}
+          />
+        </motion.div>
+
       </div>
     </div>
   );

@@ -6,6 +6,9 @@ export default function CustomCursor() {
   const [hoveringPlay, setHoveringPlay] = useState(false);
 
   useEffect(() => {
+    const previousCursor = document.body.style.cursor;
+    document.body.style.cursor = 'none';
+
     const onMouseMove = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
     };
@@ -23,6 +26,7 @@ export default function CustomCursor() {
     window.addEventListener('mouseover', handleMouseOver);
 
     return () => {
+      document.body.style.cursor = previousCursor;
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseover', handleMouseOver);
     };
