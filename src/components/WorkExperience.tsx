@@ -38,12 +38,12 @@ const experiences = [
 
 const education = [
   {
-    period: '2021 – 2023',
+    period: '2023 – 2025',
     title: 'Senior Technician in Audiovisual (prise de vue)',
     institution: 'Centre de Formation Technologique, Tunis',
   },
   {
-    period: '2022 – 2023',
+    period: '2021 – 2023',
     title: 'Technician in Multimedia',
     institution: 'Centre de Formation Technologique, Tunis',
   },
