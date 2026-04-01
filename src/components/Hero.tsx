@@ -54,7 +54,7 @@ export default function Hero() {
 
         <motion.div
           style={{
-            opacity: overlayOpacity,
+            opacity: 0.9,
             position: 'absolute',
             left: '50%',
             bottom: '2.2rem',
@@ -68,7 +68,7 @@ export default function Hero() {
             display: 'flex',
             justifyContent: 'center',
             paddingTop: '8px',
-            zIndex: 30,
+            zIndex: 60,
             pointerEvents: 'none',
           }}
         >

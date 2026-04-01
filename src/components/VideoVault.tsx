@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 
 type VideoProject = {
   id: string;
-  platform: 'youtube' | 'facebook';
-  sourceId: string; // Either youtube ID or full FB url
+  platform: 'youtube' | 'facebook' | 'instagram' | 'local';
+  sourceId: string; // YouTube ID, FB URL, or Instagram ID/URL
   title: string;
   thumbnail: string;
   role: string;
@@ -22,11 +22,46 @@ type VideoSection = {
 
 const TELVZATV_LOGO = '/talvzatx-logo.svg';
 
+import beinCover1 from '../../media_ressources/match 1.jpg';
+import beinCover2 from '../../media_ressources/match 2.jpg';
+import freelanceLocalVid from '../../media_ressources/personal_photos/VID-20260401-WA0005.mp4';
+
 const VAULT_SECTIONS: VideoSection[] = [
   {
+    id: 'bein-sports',
+    title: 'beIN Sports',
+    subtitle: 'CAF Champions League — Live Sports Coverage',
+    projects: [
+      {
+        id: 'bein-yt-1',
+        platform: 'youtube',
+        sourceId: 'uvIJMxgSK6g',
+        title: 'BEIN SPORTS MATCH 01',
+        thumbnail: beinCover1,
+        role: 'Live Camera Operator',
+        camera: 'Broadcast Pedestal',
+        network: 'beIN Sports',
+        year: '2026',
+        isNationalTv: true,
+      },
+      {
+        id: 'bein-yt-2',
+        platform: 'youtube',
+        sourceId: 'pnQlVLcqHXI',
+        title: 'BEIN SPORTS MATCH 02',
+        thumbnail: beinCover2,
+        role: 'Live Camera Operator',
+        camera: 'Broadcast Pedestal',
+        network: 'beIN Sports',
+        year: '2026',
+        isNationalTv: true,
+      },
+    ],
+  },
+  {
     id: 'youtube',
-    title: 'YouTube Vault',
-    subtitle: 'Official YouTube productions',
+    title: 'Watania1 TV',
+    subtitle: 'Featured Watania1 TV videos',
     projects: [
       {
         id: 'yt-1',
@@ -65,66 +100,6 @@ const VAULT_SECTIONS: VideoSection[] = [
         isNationalTv: false,
       },
       {
-        id: 'yt-4',
-        platform: 'youtube',
-        sourceId: 'FkSbPRvZ1cM',
-        title: 'YOUTUBE FEATURE 04',
-        thumbnail: 'https://img.youtube.com/vi/FkSbPRvZ1cM/maxresdefault.jpg',
-        role: 'Cinematographer',
-        camera: 'Sony FX6',
-        network: 'YouTube',
-        year: '2024',
-        isNationalTv: false,
-      },
-      {
-        id: 'yt-5',
-        platform: 'youtube',
-        sourceId: 'GcRGHNcdjOU',
-        title: 'YOUTUBE FEATURE 05',
-        thumbnail: 'https://img.youtube.com/vi/GcRGHNcdjOU/maxresdefault.jpg',
-        role: 'Camera Operator',
-        camera: 'Canon C70',
-        network: 'YouTube',
-        year: '2023',
-        isNationalTv: false,
-      },
-      {
-        id: 'yt-6',
-        platform: 'youtube',
-        sourceId: 'A8cVL8eLLa0',
-        title: 'YOUTUBE FEATURE 06',
-        thumbnail: 'https://img.youtube.com/vi/A8cVL8eLLa0/maxresdefault.jpg',
-        role: 'Lead Videographer',
-        camera: 'Blackmagic 6K Pro',
-        network: 'YouTube',
-        year: '2023',
-        isNationalTv: false,
-      },
-      {
-        id: 'yt-7',
-        platform: 'youtube',
-        sourceId: 'a2z-aiPf7f8',
-        title: 'YOUTUBE FEATURE 07',
-        thumbnail: 'https://img.youtube.com/vi/a2z-aiPf7f8/maxresdefault.jpg',
-        role: 'Videographer',
-        camera: 'Sony FX3',
-        network: 'YouTube',
-        year: '2023',
-        isNationalTv: false,
-      },
-      {
-        id: 'yt-8',
-        platform: 'youtube',
-        sourceId: 'WzBmDjYz7e8',
-        title: 'YOUTUBE FEATURE 08',
-        thumbnail: 'https://img.youtube.com/vi/WzBmDjYz7e8/maxresdefault.jpg',
-        role: 'Camera Operator',
-        camera: 'Canon C300 Mark III',
-        network: 'YouTube',
-        year: '2023',
-        isNationalTv: false,
-      },
-      {
         id: 'yt-9',
         platform: 'youtube',
         sourceId: 'aJLF7hXvT04',
@@ -151,15 +126,15 @@ const VAULT_SECTIONS: VideoSection[] = [
     ],
   },
   {
-    id: 'rap-video-clip',
-    title: 'Rap Video Clip',
-    subtitle: 'Dedicated rap clip section',
+    id: 'video-clip',
+    title: 'Video Clip',
+    subtitle: 'Professional music and video clips',
     projects: [
       {
         id: 'rap-1',
         platform: 'youtube',
         sourceId: 'WqphQ4KqnXM',
-        title: 'RAP VIDEO CLIP 01',
+        title: 'VIDEO CLIP 01',
         thumbnail: 'https://img.youtube.com/vi/WqphQ4KqnXM/maxresdefault.jpg',
         role: 'Camera Operator',
         camera: 'Canon C70',
@@ -171,12 +146,48 @@ const VAULT_SECTIONS: VideoSection[] = [
         id: 'rap-2',
         platform: 'youtube',
         sourceId: 'vG8ar-UaD08',
-        title: 'RAP VIDEO CLIP 02',
+        title: 'VIDEO CLIP 02',
         thumbnail: 'https://img.youtube.com/vi/vG8ar-UaD08/maxresdefault.jpg',
         role: 'Camera Operator',
         camera: 'Sony FX6',
         network: 'YouTube',
         year: '2024',
+        isNationalTv: false,
+      },
+      {
+        id: 'rap-fb-1',
+        platform: 'facebook',
+        sourceId: 'https://www.facebook.com/reel/1185694182429605',
+        title: 'VIDEO CLIP 03',
+        thumbnail: 'https://images.unsplash.com/photo-1571330735066-03aaa9429d89?q=80&w=1200&auto=format&fit=crop',
+        role: 'Videographer',
+        camera: 'Sony FX3',
+        network: 'Facebook',
+        year: '2025',
+        isNationalTv: false,
+      },
+      {
+        id: 'rap-fb-2',
+        platform: 'facebook',
+        sourceId: 'https://www.facebook.com/reel/1790873145090898',
+        title: 'VIDEO CLIP 04',
+        thumbnail: 'https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?q=80&w=1200&auto=format&fit=crop',
+        role: 'Videographer',
+        camera: 'Sony FX3',
+        network: 'Facebook',
+        year: '2025',
+        isNationalTv: false,
+      },
+      {
+        id: 'rap-yt-5',
+        platform: 'youtube',
+        sourceId: 'SL02vYnyDLE',
+        title: 'VIDEO CLIP 05',
+        thumbnail: 'https://img.youtube.com/vi/SL02vYnyDLE/maxresdefault.jpg',
+        role: 'Videographer',
+        camera: 'Sony FX3',
+        network: 'YouTube',
+        year: '2025',
         isNationalTv: false,
       },
     ],
@@ -238,30 +249,42 @@ const VAULT_SECTIONS: VideoSection[] = [
   },
   {
     id: 'baccar',
-    title: 'Facebook - Baccar Production',
-    subtitle: 'Work with Baccar Production',
+    title: 'Facebook - Freelance',
+    subtitle: 'Freelance Projects',
     projects: [
       {
-        id: 'baccar-1',
-        platform: 'facebook',
-        sourceId: 'https://www.facebook.com/reel/1048335189982328',
-        title: 'BACCAR VIDEO 01',
+        id: 'baccar-7',
+        platform: 'local',
+        sourceId: freelanceLocalVid,
+        title: 'FREELANCE VIDEO 01',
         thumbnail: 'https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b?q=80&w=1200&auto=format&fit=crop',
         role: 'Cinematographer',
-        camera: 'RED V-Raptor',
-        network: 'Baccar Production',
-        year: '2023',
+        camera: 'Sony FX9',
+        network: 'Freelance',
+        year: '2026',
         isNationalTv: false,
       },
       {
-        id: 'baccar-2',
+        id: 'baccar-4',
         platform: 'facebook',
-        sourceId: 'https://www.facebook.com/reel/3938233553164538',
-        title: 'BACCAR VIDEO 02',
+        sourceId: 'https://www.facebook.com/reel/1438154277211230',
+        title: 'FREELANCE VIDEO 02',
         thumbnail: 'https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b?q=80&w=1200&auto=format&fit=crop',
-        role: 'Camera Lead',
+        role: 'Director of Photography',
+        camera: 'Sony FX9',
+        network: 'Freelance',
+        year: '2024',
+        isNationalTv: false,
+      },
+      {
+        id: 'baccar-5',
+        platform: 'facebook',
+        sourceId: 'https://www.facebook.com/reel/772735205418988',
+        title: 'FREELANCE VIDEO 03',
+        thumbnail: 'https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b?q=80&w=1200&auto=format&fit=crop',
+        role: 'Cinematographer',
         camera: 'ARRI Mini LF',
-        network: 'Baccar Production',
+        network: 'Freelance',
         year: '2024',
         isNationalTv: false,
       },
@@ -269,11 +292,23 @@ const VAULT_SECTIONS: VideoSection[] = [
         id: 'baccar-3',
         platform: 'facebook',
         sourceId: 'https://www.facebook.com/reel/3653788164766517',
-        title: 'BACCAR VIDEO 03',
+        title: 'FREELANCE VIDEO 04',
         thumbnail: 'https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b?q=80&w=1200&auto=format&fit=crop',
         role: 'Director of Photography',
         camera: 'Sony VENICE',
-        network: 'Baccar Production',
+        network: 'Freelance',
+        year: '2024',
+        isNationalTv: false,
+      },
+      {
+        id: 'baccar-6',
+        platform: 'facebook',
+        sourceId: 'https://www.facebook.com/reel/9720558298049137',
+        title: 'FREELANCE VIDEO 05',
+        thumbnail: 'https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b?q=80&w=1200&auto=format&fit=crop',
+        role: 'Cinematographer',
+        camera: 'Sony FX9',
+        network: 'Freelance',
         year: '2024',
         isNationalTv: false,
       },
@@ -282,6 +317,7 @@ const VAULT_SECTIONS: VideoSection[] = [
 ];
 
 const VAULT_DATA: VideoProject[] = VAULT_SECTIONS.flatMap((section) => section.projects);
+const SECTION_ORDER = ['baccar', 'bein-sports', 'youtube', 'video-clip', 'telvza'];
 
 export default function VideoVault({ onSelectVideo }: { onSelectVideo: (id: string) => void }) {
   return (
@@ -295,7 +331,10 @@ export default function VideoVault({ onSelectVideo }: { onSelectVideo: (id: stri
         </p>
       </div>
 
-      {VAULT_SECTIONS.map((section) => (
+      {VAULT_SECTIONS
+        .slice()
+        .sort((a, b) => SECTION_ORDER.indexOf(a.id) - SECTION_ORDER.indexOf(b.id))
+        .map((section) => (
         <div key={section.id} style={{ marginBottom: '2.75rem' }}>
           <div
             style={{
@@ -363,6 +402,16 @@ export default function VideoVault({ onSelectVideo }: { onSelectVideo: (id: stri
                       scrolling="no"
                       frameBorder="0"
                       allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                    />
+                  ) : project.platform === 'local' ? (
+                    <video
+                      src={project.sourceId}
+                      muted
+                      loop
+                      autoPlay
+                      playsInline
+                      preload="metadata"
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', pointerEvents: 'none' }}
                     />
                   ) : (
                     <img

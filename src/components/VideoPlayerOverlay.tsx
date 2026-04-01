@@ -7,6 +7,8 @@ export default function VideoPlayerOverlay({ videoId, onClose }: { videoId: stri
 
   if (!project) return null;
 
+  const isVerticalVideo = project.platform === 'facebook' || project.platform === 'instagram';
+
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -39,13 +41,41 @@ export default function VideoPlayerOverlay({ videoId, onClose }: { videoId: stri
         <X size={32} />
       </button>
 
+      <motion.div
+        initial={{ opacity: 0, y: -14 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.15 }}
+        style={{
+          position: 'absolute',
+          top: '1.35rem',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          background: 'rgba(255, 255, 255, 0.08)',
+          border: '1px solid rgba(255, 255, 255, 0.18)',
+          borderRadius: '999px',
+          padding: '0.55rem 1rem',
+          color: 'var(--text-primary)',
+          fontSize: '0.9rem',
+          fontWeight: 600,
+          letterSpacing: '0.02em',
+          backdropFilter: 'blur(12px)',
+          zIndex: 1010,
+          maxWidth: 'min(90vw, 980px)',
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+        }}
+      >
+        {project.title}
+      </motion.div>
+
       {/* Expanded Container: Handles YouTube Wide vs Facebook Vertical */}
       <motion.div 
         layoutId={`video-container-${project.id}`}
         style={{ 
-          width: '90vw', 
-          maxWidth: '1400px',
-          aspectRatio: '16/9',
+          width: isVerticalVideo ? 'min(92vw, 540px)' : 'min(92vw, 1400px)',
+          height: isVerticalVideo ? 'min(88vh, 960px)' : 'auto',
+          aspectRatio: isVerticalVideo ? '9/16' : '16/9',
           borderRadius: '1rem', 
           overflow: 'hidden', 
           position: 'relative' 
@@ -65,9 +95,26 @@ export default function VideoPlayerOverlay({ videoId, onClose }: { videoId: stri
               allowFullScreen 
               style={{ border: 'none' }}
             />
+          ) : project.platform === 'instagram' ? (
+            <iframe 
+              src={`https://www.instagram.com/reels/${project.sourceId}/embed`}
+              width="100%" 
+              height="100%" 
+              style={{ border: 'none', background: '#000' }}
+              scrolling="no" 
+              allowTransparency={true}
+              frameBorder="0" 
+            />
+          ) : project.platform === 'local' ? (
+            <video
+              src={project.sourceId}
+              controls
+              autoPlay
+              style={{ width: '100%', height: '100%', objectFit: 'contain', background: '#000' }}
+            />
           ) : (
             <iframe 
-              src={`https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(project.sourceId)}&show_text=false&width=1280`}
+              src={`https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(project.sourceId)}&show_text=false&width=540&height=960`}
               width="100%" 
               height="100%" 
               style={{ border: 'none', overflow: 'hidden' }}
@@ -79,29 +126,7 @@ export default function VideoPlayerOverlay({ videoId, onClose }: { videoId: stri
           )}
         </motion.div>
 
-        {/* Floating Technical Specs Glassmorphism Card */}
-        <motion.div 
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          style={{
-            position: 'absolute',
-            bottom: '2rem',
-            left: '2rem',
-            background: 'rgba(255, 255, 255, 0.05)',
-            backdropFilter: 'blur(20px)',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
-            padding: '1.5rem',
-            borderRadius: '12px',
-            color: 'var(--text-primary)',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '0.5rem',
-            boxShadow: '0 4px 30px rgba(0, 0, 0, 0.5)'
-          }}
-        >
-          <h3 style={{ margin: 0, fontSize: '1.5rem', fontWeight: 600, color: 'var(--accent)' }}>{project.title}</h3>
-        </motion.div>
+        {/* Title is now displayed above the player for all platforms */}
 
       </motion.div>
     </motion.div>

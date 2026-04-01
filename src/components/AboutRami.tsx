@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 
 // Import local assets dynamically since they are now available
-import img1 from '../../media_ressources/personal_photos/503409482_2765424916987164_6251504125687779431_n.jpg';
 import img2 from '../../media_ressources/personal_photos/509361318_2781746268688362_3430735660176414480_n.jpg';
 import img3 from '../../media_ressources/personal_photos/559976475_2895443497318638_5794575396664343093_n.jpg';
 import img4 from '../../media_ressources/personal_photos/587335051_2938714712991516_6000036510394832408_n.jpg';
+import imgNew from '../../media_ressources/personal_photos/WhatsApp Image 2026-04-01 at 10.14.49 PM.jpeg';
 
 export default function AboutRami() {
   return (
@@ -32,7 +32,7 @@ export default function AboutRami() {
              transition={{ duration: 0.6, delay: 0.1 }}
              style={{ borderRadius: '1rem', overflow: 'hidden', height: '38vh', minHeight: '300px', gridRow: 'span 2' }}
           >
-            <img src={img1} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '20% 34%' }} alt="Rami Operating Camera 1" />
+            <img src={img4} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '53% 30%' }} alt="Rami Operating Camera 1" />
           </motion.div>
           <motion.div 
              initial={{ opacity: 0, y: 30 }}
@@ -62,7 +62,7 @@ export default function AboutRami() {
              transition={{ duration: 0.6, delay: 0.4 }}
              style={{ borderRadius: '1rem', overflow: 'hidden', height: '24vh', minHeight: '200px', gridColumn: 'span 2', marginTop: '-0.5rem' }}
           >
-            <img src={img4} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '53% 30%' }} alt="Studio Setup 4" />
+            <img src={imgNew} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '16% 35%' }} alt="Studio Setup 4" />
           </motion.div>
         </div>
 
