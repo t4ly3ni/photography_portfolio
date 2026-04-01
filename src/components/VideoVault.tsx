@@ -249,7 +249,7 @@ const VAULT_SECTIONS: VideoSection[] = [
   },
   {
     id: 'baccar',
-    title: 'Facebook - Freelance',
+    title: 'Freelance',
     subtitle: 'Freelance Projects',
     projects: [
       {

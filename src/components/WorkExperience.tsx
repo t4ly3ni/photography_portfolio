@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const experiences = [
   {
-    period: '2024 – 2025',
+    period: '2024 – 2026',
     role: 'Cameraman — Live Sports & General Programming',
     company: 'Tunisian National Television',
     type: 'National Public Broadcaster',
@@ -13,7 +13,7 @@ const experiences = [
     ],
   },
   {
-    period: '2023 – 2024',
+    period: '2022 – 2024',
     role: 'Cameraman',
     company: 'Telvza TV',
     type: 'Private Television Channel',
@@ -23,12 +23,22 @@ const experiences = [
       "Enhanced the channel's visual identity through creative and stable shot compositions.",
     ],
   },
+  {
+    period: '2021 – Present',
+    role: 'Freelance Videographer',
+    company: 'Independent Projects',
+    type: 'Freelance',
+    highlights: [
+      'Shot and edited song clips, focusing on cinematic storytelling and rhythm-based cuts.',
+      'Covered marriages and wedding events with full highlight films and social media edits.',
+    ],
+  },
 ];
 
 const education = [
   {
-    period: '2023 – 2024',
-    title: 'Senior Technician in Audiovisual (Cinematography)',
+    period: '2021 – 2023',
+    title: 'Senior Technician in Audiovisual (prise de vue)',
     institution: 'Centre de Formation Technologique, Tunis',
   },
   {

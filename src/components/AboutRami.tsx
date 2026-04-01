@@ -83,11 +83,7 @@ export default function AboutRami() {
           <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}>
               <span style={{ color: 'var(--text-muted)' }}>Role</span>
-              <span style={{ fontWeight: 600, color: 'var(--accent)' }}>TV Videographer / Artist</span>
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}>
-              <span style={{ color: 'var(--text-muted)' }}>Systems</span>
-              <span style={{ fontWeight: 600 }}>ARRI, Sony Cine, RED</span>
+              <span style={{ fontWeight: 600, color: 'var(--accent)' }}>Videographer</span>
             </div>
           </div>
         </motion.div>
