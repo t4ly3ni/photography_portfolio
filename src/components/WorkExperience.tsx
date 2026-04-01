@@ -31,6 +31,7 @@ const experiences = [
     highlights: [
       'Shot and edited song clips, focusing on cinematic storytelling and rhythm-based cuts.',
       'Covered marriages and wedding events with full highlight films and social media edits.',
+      'Produced commercial video ads for freelance clients, from shooting to final delivery optimized for social media.',
     ],
   },
 ];
